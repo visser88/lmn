@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'lmn_db',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,6 +50,16 @@ return array(
 			'driver'   => 'sqlite',
 			'database' => __DIR__.'/../database/production.sqlite',
 			'prefix'   => '',
+		),
+
+		'lmn_db' => array(
+			'driver' => 'mysql',
+			'host' => 'localhost',
+			'database' => 'lmnstd',
+			'username' => 'admin',
+			'password' => 'root',
+			'charset' => 'utf8',
+			'collation' => 'utf8_unicode_ci'
 		),
 
 		'mysql' => array(
