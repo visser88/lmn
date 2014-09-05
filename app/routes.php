@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'ProductController@index');
-Route::get('update', 'ProductController@update');
+Route::post('update', 'ProductController@update');
 Route::get('chart', 'ProductController@chart');

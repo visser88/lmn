@@ -36,6 +36,7 @@ function getProducts(page){
 function update(){
 	$.ajax({
 		url: '/update',
+		type: 'POST',
 		dataType: 'json',
 		beforeSend: function(){
 			$('#product-list').children().animate({
@@ -48,6 +49,9 @@ function update(){
 		success: function(response){
 			if(response.success){
 				createMessage('good', response.msg);
+				if($('#product-list').length){
+					getProducts(1);					
+				}
 			}
 			else createMessage('bad', response.msg);
 		},

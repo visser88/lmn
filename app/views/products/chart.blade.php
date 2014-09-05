@@ -10,31 +10,36 @@
             <p>This is a small application used to query waller.lemonstand.com for a new product list, update the local database, and display the results as a list and chart.</p>
             <p><button class="update btn btn-success btn-large">Update Products Now &raquo;</button></p>
           </div>
-          test
         </div><!--/span-->
       </div><!--/row-->
       <div class="row-fluid">
-      <div id="chart" style="height:200px" class="span12">
-        <script>
-          new Morris.Line({
-            element: 'myfirstchart',
-            data : [
-              { year: '2008', value: 20 },
-              { year: '2009', value: 10 },
-              { year: '2010', value: 5 },
-              { year: '2011', value: 5 },
-              { year: '2012', value: 20 }
+        <div id="productchart" style=""></div>
+        @section('scripts')
+          <script>
+          new Morris.Bar({
+            // ID of the element in which to draw the chart.
+            element: 'productchart',
+            // Chart data records -- each entry in this array corresponds to a point on
+            // the chart.
+            data: [
+              <?php
+                foreach($products as $product){
+                  echo '{name: "'.$product['name'].'", value: '.$product['base_price'].'},';
+                }
+              ?>
             ],
-            xkey: 'year',
+            // The name of the data record attribute that contains x-values.
+            xkey: 'name',
+            // A list of names of data record attributes that contain y-values.
             ykeys: ['value'],
-            labels: ['Value']
+            // Labels for the ykeys -- will be displayed when you hover over the
+            // chart.
+            labels: ['Price']
           });
-        </script>
+          </script>
+        @stop
       </div>
-      </div>
-
       <hr>
-
       <footer>
         <p>Josh Waller 2013</p>
       </footer>

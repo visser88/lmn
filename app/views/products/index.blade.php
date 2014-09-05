@@ -15,9 +15,7 @@
 	       </div>
         </div><!--/span-->
       </div><!--/row-->
-
       <hr>
-
       <footer>
         <p>Josh Waller 2013</p>
       </footer>
