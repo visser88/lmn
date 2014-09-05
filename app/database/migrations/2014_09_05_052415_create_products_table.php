@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration {
 			$table->text('description')->nullable();
 			$table->string('short_description')->nullable();
 			$table->string('meta_description')->nullable();
-			$table->text('meta_keywords')->nullable();
+			$table->text('meta_keywords')->nullable();	
 			$table->string('url_name')->nullable();
 			$table->float('base_price')->default(00.00);
 			$table->integer('cost')->nullable();
