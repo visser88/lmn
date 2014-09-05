@@ -48,7 +48,10 @@ class ProductController extends BaseController {
 		$curlConfig = array(
 			CURLOPT_URL => 'https://waller.lemonstand.com/api/v2/products',
 			CURLOPT_RETURNTRANSFER => true,
-			
+			CURLOPT_HTTPHEADER => array(
+				//'Authorization: Bearer {INSERT API KEY HERE}',
+				'Content-Type: application/json'
+			)
 		);
 
 		curl_setopt_array($ch, $curlConfig);
