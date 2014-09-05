@@ -17,29 +17,12 @@
 	background: #ffe;
 }
 
-.product-item {
-	width: 100%;
-	border-radius: 10px;
-	border: 1px solid red;
-}
-
 .hero-unit {
-	background: url('/img/banner.jpg') left top no-repeat;
-	height: 10em;
+	background: url('/img/banner.jpg') left top;
 	box-shadow: 1px 2px 3px #888;
 	background-size: 100%;
-}
-
-.hero-unit {
-	color: #eee;
+	color: #fff;
 	text-shadow: 1px 1px 2px black;
-}
-
-.product-item {
-	border: 1px solid grey;
-	border-radius: 10px;
-	box-shadow: 1px 2px 3px #888;
-	margin-bottom: 1em;
 }
 
 .pagination {
@@ -79,4 +62,67 @@
 
 #product-list {
 	position: relative;
+}
+
+.product-item {
+	position: relative;
+	background: white;
+	box-shadow: 2px 3px 5px #555;
+	margin-bottom: 1em;
+	height: 15em;
+}
+
+.product-name {
+	font-family: 'Changa One', cursive;
+	font-size: 2.5em;
+	position: absolute;
+	top: 1.25em;
+	width: 100%;
+	text-align: center;
+	color: gold;
+	text-shadow: 1px 1px 3px black;
+}
+
+.product-price {
+	position: absolute;
+	top: 3.5em;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+	color: #555;	
+}
+
+.product-price.sale {
+	text-decoration: line-through;
+}
+
+.product-sale {
+	position: absolute;
+	top: 4.5em;
+	width: 100%;
+	text-align: center;
+	color: red;
+	font-size: 2em;
+}
+
+.product-item .desc {
+	position: absolute;
+	bottom: 0;
+	padding: 0 1em .5em 1em;
+}
+
+.lemon {
+	position: absolute;
+	top: .5em;
+	left: .5em;
+	width: 7em;
+}
+
+.loading {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: 20em;
+	margin-left: -10em;
+	z-index: 800;
 }

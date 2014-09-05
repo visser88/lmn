@@ -11,6 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/default.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,58 +32,22 @@
           <a class="brand" href="#">Lemon Store</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li class="update"><a href="#update">Update <i class="icon-refresh"></i></a></li>
-              <li><a href="#chart">Chart</a></li>
+              @yield('navbar')
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div id="container" class="container-fluid">
-      <div class="row-fluid">
-        <div class="span12">
-          <div class="hero-unit">
-            <h1>Hello, user!</h1>
-            <p>This is a small application used to query waller.lemonstand.com for a new product list, update the local database, and display the results as a list and chart.</p>
-            <p><button class="update btn btn-success btn-large">Update Products Now &raquo;</button></p>
-          </div>
-          <div id="product-list">
-	           <div class="row-fluid">
-	           		<?php
-	           			foreach($products as $i => $product){
-	           				if($i == 3){
-	           					echo '</div>';
-	           					echo '<div class="row-fluid">';
-	           				}
-	           				echo '<div class="span4 product-item">';
-	           				echo $product->name;
-	           				echo '</div>';
-	           			}
-	           		?>
-	          </div><!--/row-->
-	          <div class="row-fluid">
-	          		<div class="span12">
-			      		<?php echo $products->links(); ?>
-			        </div>
-	          </div>
-	       </div>
-        </div><!--/span-->
-      </div><!--/row-->
+    @yield('content')
 
-      <hr>
-
-      <footer>
-        <p>Josh Waller 2013</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
+      <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.5.1.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.5.1.min.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-alert.js"></script>
     <script src="js/bootstrap-modal.js"></script>
